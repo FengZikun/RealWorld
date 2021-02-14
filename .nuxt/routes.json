@@ -1,0 +1,19 @@
+[
+  {
+    "path": "/",
+    "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\layout",
+    "children": [
+      {
+        "path": "",
+        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\home",
+        "_name": "_650482fc"
+      },
+      {
+        "path": "/login",
+        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\login",
+        "_name": "_3bc424ec"
+      }
+    ],
+    "_name": "_3c037607"
+  }
+]

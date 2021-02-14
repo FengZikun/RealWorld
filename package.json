@@ -1,0 +1,17 @@
+{
+  "name": "task-03-03",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://gitee.com/feng-zikun/task-03-03.git",
+  "author": "fengzikun <fengzikun11@163.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
+  },
+  "dependencies": {
+    "nuxt": "^2.14.12"
+  }
+}
