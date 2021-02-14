@@ -12,7 +12,38 @@ module.exports = {
           },
           {
             path: '/login',
+            name: 'login',
             component: resolve(__dirname, 'pages/login/')
+          },
+          {
+            path: '/register',
+            name: 'register',
+            component: resolve(__dirname, 'pages/login/')
+          },
+          {
+            path: '/settings',
+            name: 'settings',
+            component: resolve(__dirname, 'pages/settings/')
+          },
+          {
+            path: '/profile',
+            name: 'profile',
+            component: resolve(__dirname, 'pages/profile/')
+          },
+          {
+            path: '/article',
+            name: 'article',
+            component: resolve(__dirname, 'pages/article/')
+          },
+          {
+            path: '/edit-article',
+            name: 'edit-article',
+            component: resolve(__dirname, 'pages/edit-article/')
+          },
+          {
+            path: '/create-article',
+            name: 'create-article',
+            component: resolve(__dirname, 'pages/edit-article/')
           }
         ]
       }]);

@@ -7,7 +7,7 @@
         <ul class="nav navbar-nav pull-xs-right">
           <li class="nav-item">
             <!-- Add "active" class when you're on that page" -->
-            <a class="nav-link active" href="">Home</a>
+            <nuxt-link class="nav-link active" to="/">Home</nuxt-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="">
@@ -15,9 +15,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <nuxt-link class="nav-link" to="/settings">
               <i class="ion-gear-a"></i>&nbsp;Settings
-            </a>
+            </nuxt-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="">Sign up</a>

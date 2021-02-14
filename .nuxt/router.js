@@ -7,6 +7,10 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _3c037607 = () => interopDefault(import('..\\pages\\layout' /* webpackChunkName: "" */))
 const _650482fc = () => interopDefault(import('..\\pages\\home' /* webpackChunkName: "" */))
 const _3bc424ec = () => interopDefault(import('..\\pages\\login' /* webpackChunkName: "" */))
+const _29101880 = () => interopDefault(import('..\\pages\\settings' /* webpackChunkName: "" */))
+const _34756a6c = () => interopDefault(import('..\\pages\\profile' /* webpackChunkName: "" */))
+const _1b3fadb9 = () => interopDefault(import('..\\pages\\article' /* webpackChunkName: "" */))
+const _4da19550 = () => interopDefault(import('..\\pages\\edit-article' /* webpackChunkName: "" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -32,7 +36,32 @@ export const routerOptions = {
       component: _650482fc
     }, {
       path: "/login",
-      component: _3bc424ec
+      component: _3bc424ec,
+      name: "login"
+    }, {
+      path: "/register",
+      component: _3bc424ec,
+      name: "register"
+    }, {
+      path: "/settings",
+      component: _29101880,
+      name: "settings"
+    }, {
+      path: "/profile",
+      component: _34756a6c,
+      name: "profile"
+    }, {
+      path: "/article",
+      component: _1b3fadb9,
+      name: "article"
+    }, {
+      path: "/edit-article",
+      component: _4da19550,
+      name: "edit-article"
+    }, {
+      path: "/create-article",
+      component: _4da19550,
+      name: "create-article"
     }]
   }],
 
