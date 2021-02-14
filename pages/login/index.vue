@@ -4,9 +4,10 @@
     <div class="row">
 
       <div class="col-md-6 offset-md-3 col-xs-12">
-        <h1 class="text-xs-center">Sign up</h1>
+        <h1 class="text-xs-center">{{ isLogin ? 'Sign in' : 'Sign up'}}</h1>
         <p class="text-xs-center">
-          <a href="">Have an account?</a>
+          <nuxt-link to="/login" v-if="!isLogin">Have an account?</nuxt-link>
+          <nuxt-link to="/register" v-else>Don't have an account?</nuxt-link>
         </p>
 
         <ul class="error-messages">
@@ -17,14 +18,14 @@
           <fieldset class="form-group">
             <input class="form-control form-control-lg" type="text" placeholder="Your Name">
           </fieldset>
-          <fieldset class="form-group">
+          <fieldset v-if="!isLogin" class="form-group">
             <input class="form-control form-control-lg" type="text" placeholder="Email">
           </fieldset>
           <fieldset class="form-group">
             <input class="form-control form-control-lg" type="password" placeholder="Password">
           </fieldset>
           <button class="btn btn-lg btn-primary pull-xs-right">
-            Sign up
+            {{ isLogin ? 'Sign in' : 'Sign up'}}
           </button>
         </form>
       </div>
@@ -36,7 +37,11 @@
 
 <script>
 export default {
-  
+  computed: {
+    isLogin() {
+      return this.$route.name === 'login'
+    }
+  }
 }
 </script>
 
