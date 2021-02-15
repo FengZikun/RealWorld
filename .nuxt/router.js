@@ -33,7 +33,8 @@ export const routerOptions = {
     component: _3c037607,
     children: [{
       path: "",
-      component: _650482fc
+      component: _650482fc,
+      name: "home"
     }, {
       path: "/login",
       component: _3bc424ec,
@@ -47,11 +48,11 @@ export const routerOptions = {
       component: _29101880,
       name: "settings"
     }, {
-      path: "/profile/:id",
+      path: "/profile/:username",
       component: _34756a6c,
       name: "profile"
     }, {
-      path: "/article",
+      path: "/article/:slug",
       component: _1b3fadb9,
       name: "article"
     }, {

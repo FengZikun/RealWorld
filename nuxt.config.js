@@ -9,6 +9,7 @@ module.exports = {
         children: [
           {
             path: '',
+            name: 'home',
             component: resolve(__dirname, 'pages/home/')
           },
           {
@@ -27,12 +28,12 @@ module.exports = {
             component: resolve(__dirname, 'pages/settings/')
           },
           {
-            path: '/profile/:id',
+            path: '/profile/:username',
             name: 'profile',
             component: resolve(__dirname, 'pages/profile/')
           },
           {
-            path: '/article',
+            path: '/article/:slug',
             name: 'article',
             component: resolve(__dirname, 'pages/article/')
           },

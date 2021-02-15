@@ -5,43 +5,53 @@
     "children": [
       {
         "path": "",
-        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\home"
+        "name": "home",
+        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\home",
+        "_name": "_650482fc"
       },
       {
         "path": "/login",
         "name": "login",
-        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\login"
+        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\login",
+        "_name": "_3bc424ec"
       },
       {
         "path": "/register",
         "name": "register",
-        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\login"
+        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\login",
+        "_name": "_3bc424ec"
       },
       {
         "path": "/settings",
         "name": "settings",
-        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\settings"
+        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\settings",
+        "_name": "_29101880"
       },
       {
-        "path": "/profile/:id",
+        "path": "/profile/:username",
         "name": "profile",
-        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\profile"
+        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\profile",
+        "_name": "_34756a6c"
       },
       {
-        "path": "/article",
+        "path": "/article/:slug",
         "name": "article",
-        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\article"
+        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\article",
+        "_name": "_1b3fadb9"
       },
       {
         "path": "/edit-article",
         "name": "edit-article",
-        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\edit-article"
+        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\edit-article",
+        "_name": "_4da19550"
       },
       {
         "path": "/create-article",
         "name": "create-article",
-        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\edit-article"
+        "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\edit-article",
+        "_name": "_4da19550"
       }
-    ]
+    ],
+    "_name": "_3c037607"
   }
 ]
