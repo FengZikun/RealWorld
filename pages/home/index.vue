@@ -18,6 +18,9 @@
               <li class="nav-item">
                 <a class="nav-link active" href>Global Feed</a>
               </li>
+              <li v-if="$route.query.tag" class="nav-item">
+                <a class="nav-link active" href>#{{$route.query.tag}}</a>
+              </li>
             </ul>
           </div>
 
