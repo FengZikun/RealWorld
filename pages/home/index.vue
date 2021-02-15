@@ -13,13 +13,28 @@
           <div class="feed-toggle">
             <ul class="nav nav-pills outline-active">
               <li class="nav-item">
-                <a class="nav-link disabled" href>Your Feed</a>
+                <nuxt-link
+                  exact
+                  class="nav-link"
+                  :to="`/?tab=your_feed`"
+                  :class="{'active': tab === 'your_feed'}"
+                >Your Feed</nuxt-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href>Global Feed</a>
+                <nuxt-link
+                  exact
+                  class="nav-link"
+                  :to="`/?tab=global_feed`"
+                  :class="{'active': tab === 'global_feed'}"
+                >Global Feed</nuxt-link>
               </li>
               <li v-if="$route.query.tag" class="nav-item">
-                <a class="nav-link active" href>#{{$route.query.tag}}</a>
+                <nuxt-link
+                  exact
+                  class="nav-link"
+                  :to="`/?tab=tag_feed&&tag=${tag}`"
+                  :class="{'active': tab === 'tag_feed'}"
+                >#{{$route.query.tag}}</nuxt-link>
               </li>
             </ul>
           </div>
@@ -51,6 +66,8 @@
               <button
                 class="btn btn-outline-primary btn-sm pull-xs-right"
                 :class="{'active': article.favorited}"
+                :disabled="article.favoriteDisabled"
+                @click="onFavorite(article)"
               >
                 <i class="ion-heart"></i>
                 {{article.favoritesCount}}
@@ -78,7 +95,8 @@
                 name: 'home',
                 query: {
                   page: item,
-                  tag: $route.query.tag
+                  tag: $route.query.tag,
+                  tab: tab
                 }
               }"
               >{{item}}</nuxt-link>
@@ -95,7 +113,8 @@
                 :to="{
                 name: 'home',
                 query: {
-                  tag: item
+                  tag: item,
+                  tab: 'tag_feed'
                 }
               }"
                 class="tag-pill tag-default"
@@ -111,36 +130,68 @@
 </template>
 
 <script>
-import { getList, getTag } from '@/api/home'
+import {
+  getList,
+  getTag,
+  getFeedArticles,
+  addFavorite,
+  deleteFavorite
+} from '@/api/home'
 export default {
   name: 'HomeIndex',
 
-  watchQuery: ['page', 'tag'],
+  watchQuery: ['page', 'tag', 'tab'],
 
   async asyncData({ query }) {
     const page = Number.parseInt(query.page) || 1
     const limit = 20
     const [articles, tags] = await Promise.all([
-      getList({
-        limit,
-        offset: (page - 1) * limit,
-        tag: query.tag
-      }),
+      query.tab === 'your_feed'
+        ? getFeedArticles({
+            limit,
+            offset: (page - 1) * limit
+          })
+        : getList({
+            limit,
+            offset: (page - 1) * limit,
+            tag: query.tag
+          }),
       getTag()
     ])
+
+    articles.data.articles.forEach(item => { item.favoriteDisabled = false})
 
     return {
       articles: articles.data.articles,
       articlesCount: articles.data.articlesCount,
       limit,
       page,
-      tags: tags.data.tags
+      tags: tags.data.tags,
+      tag: query.tag,
+      tab: query.tab || 'global_feed'
     }
   },
 
   computed: {
     pages() {
       return this.articlesCount / this.limit
+    }
+  },
+
+  methods: {
+    async onFavorite(article) {
+      article.favoriteDisabled = true
+      if (article.favorited) {
+        await deleteFavorite(article.slug)
+        article.favorited = false
+        article.favoritesCount -= 1
+      } else {
+        await addFavorite(article.slug)
+        article.favorited = true
+        article.favoritesCount += 1
+      }
+      article.favoriteDisabled = false
+
     }
   }
 }

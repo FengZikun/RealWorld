@@ -1,20 +1,20 @@
 import axios from 'axios'
 
-const request = axios.create({
+export const request = axios.create({
   baseURL: 'https://conduit.productionready.io'
 })
 
+export default ({store}) => {
 
 request.interceptors.request.use(
   function(config) {
     // 增加accesstoken
     if (config.headers.Authorization === undefined) {
-      config.headers.Authorization = getSession("token") || ""
-    }
-    
-    // FormData submit
-    if (config.method.toLocaleLowerCase() === "post" && config.headers["Content-Type"] === formData) {
-      config.data = qs.stringify(config.data);
+      const { user } = store.state
+      if(user && user.token) {
+        config.headers.Authorization = `Token ${user.token}`
+      }
+      
     }
     return config;
   },
@@ -23,5 +23,4 @@ request.interceptors.request.use(
     return Promise.reject(error)
   }
 );
-
-export default request
+}
