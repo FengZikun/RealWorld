@@ -23,7 +23,7 @@
         "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\settings"
       },
       {
-        "path": "/profile",
+        "path": "/profile/:id",
         "name": "profile",
         "component": "D:\\\\Study\\\\lagou\\\\part3\\\\module3\\\\task-03-03\\\\pages\\\\profile"
       },

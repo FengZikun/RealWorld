@@ -1,5 +1,6 @@
 module.exports = {
   router: {
+    linkActiveClass: 'active',
     extendRoutes(routes, resolve) {
       routes.splice(0);
       routes.push(...[{
@@ -26,7 +27,7 @@ module.exports = {
             component: resolve(__dirname, 'pages/settings/')
           },
           {
-            path: '/profile',
+            path: '/profile/:id',
             name: 'profile',
             component: resolve(__dirname, 'pages/profile/')
           },
