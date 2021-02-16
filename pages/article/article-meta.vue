@@ -15,6 +15,7 @@
       <span class="counter">(10)</span>
     </button>
     &nbsp;
+    
     <button
       class="btn btn-sm btn-outline-primary"
       :class="{'active': article.favorited}"
